@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+        <title>HEALTH MONITORING SYSTEM</title>
+</head>
+
+<body>
+    <div class="container bg-info p-5">
+        <h1 class="text-center text-decoration-underline ">HEALTH MONITORING SYSTEM</h1>
+        <header class="header m-4">
+            <button type="button" class="btn btn-danger btn-outline-light" id="bluetooth" onclick="Connected()" >Bluetooth Not Connected</button>
+        </header>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm">
+                  <img src="https://media.istockphoto.com/photos/red-ekg-on-black-background-picture-id1160037261?k=6&m=1160037261&s=612x612&w=0&h=NTw1rNVwgQx5lUDMHIBoqAIHtLUvMIP_9O_gtuohIJM=" alt="">
+                    <div class="card-body">
+                        <p class="card-text border border-secondary text-center rounded-pill p-2">ECG MONITOR </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <h5 class="Values">Value is null</h5>
+                            </div>
+                            <small class="text-muted few-sec"></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                   <img src="https://static.bhphotovideo.com/explora/sites/default/files/Color-Temperature.jpg" alt="">
+
+                    <div class="card-body">
+                        <p class="card-text text-center border border-secondary rounded-pill p-2">TEMPERATURE MONITOR</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <h5 class="Values">Value is null</h5>
+                                
+                            </div>
+                            <small class="text-muted few-sec "></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm ">
+                    <img src="https://gcn.com/Articles/List/-/media/GIG/GCN/Redesign/Articles/2019/June/heartbeat.png" alt="" height="225px">
+
+                    <div class="card-body">
+                        <p class="card-text text-center  border border-secondary rounded-pill p-2 ">HEART RATE MONITOR</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <h5 class="Values">Value is null</h5>
+                               
+                            </div>
+                            <small class="text-muted few-sec "></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+ <script>
+     function Connected(){
+
+         document.getElementById("bluetooth").addEventListener("click",function(){
+            let bluetooth=document.getElementById("bluetooth");
+            let msg=document.getElementsByClassName("Values");
+            let timer=document.getElementsByClassName("few-sec");
+            if(bluetooth.innerHTML=="Bluetooth Not Connected"){
+            bluetooth.innerHTML = "Bluetooth Connected";
+            bluetooth.style.backgroundColor='green';
+
+            msg[0].innerHTML="Value is 676 ";
+            msg[1].innerHTML="Value is 33 ";
+            msg[2].innerHTML="Value is 55";
+
+            timer[0].innerHTML="few seconds ago"
+            timer[1].innerHTML="few seconds ago"
+            timer[2].innerHTML="few seconds ago"
+
+            }
+            else{
+            bluetooth.innerHTML = "Bluetooth Not Connected";
+            bluetooth.style.backgroundColor='Red';
+
+            msg[0].innerHTML="Value is null ";
+            msg[1].innerHTML="Value is null ";
+            msg[2].innerHTML="Value is null";
+            
+            timer[0].innerHTML="";
+            timer[1].innerHTML="";
+            timer[2].innerHTML="";
+
+            }
+
+         })
+     }
+ </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
