@@ -24,10 +24,10 @@ let myValue = 0, serviceUuid='19b10010-e8f2-537e-4f6c-d104768a1214';
       function gotCharacteristics(error, characteristics) {
         if (error) console.log('error: ', error);
 //         console.log('characteristics: ', characteristics);
-        let  myCharacteristic[3];
+
        for(let i =0;i<3;i++){
         // Read the value of the first characteristic
-        myBLE.read(myCharacteristic[i], gotValue);
+        myBLE.read(characteristics[i], gotValue);
       }
       }
 
